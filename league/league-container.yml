@@ -3,6 +3,17 @@ server:
   context-path: /leagues
 security.user.password: testme
 #security.user.password: dinesh
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${vcap.application.uris[0]:eureka}
+    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka:8761}/eureka/
 spring:
   jpa:
     show-sql: true
@@ -12,7 +23,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://localhost:3304/league
+    url: jdbc:mysql://league-db:3306/league
     username: root
     password: '{cipher}61156bd365666251d14678ae874fa78ded10711676e136385bf835a867664b02' #admin123
     driver-class-name: com.mysql.jdbc.Driver
@@ -20,7 +31,7 @@ security:
   oauth2:
     resource:
       jwt:
-        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://localhost:9999/auth/oauth/token_key}
+        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://auth-server:9999/auth/oauth/token_key}
 #      userInfoUri: http://localhost:9999/auth/user
 logging:
   level:
