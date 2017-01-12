@@ -11,12 +11,12 @@ eureka:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io:8761}/eureka/
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
 security:
   oauth2:
     client:
-      access-token-uri: ${vcap.services.auth-token.credentials.uri:http://auth-server-myp.cfapps.io:9999/auth/oauth/token}
-      user-authorization-uri: ${vcap.services.auth-authorize.credentials.uri:http://auth-server-myp.cfapps.io:9999/auth/oauth/authorize}
+      access-token-uri: ${vcap.services.auth-token.credentials.uri:http://auth-server-myp.cfapps.io/auth/oauth/token}
+      user-authorization-uri: ${vcap.services.auth-authorize.credentials.uri:http://auth-server-myp.cfapps.io/auth/oauth/authorize}
       client-id: confidential
       client-secret: '{cipher}95557e0e1afd6913c6f836a4af9d6ef7a50a0eacd6040dfbee737fdc2fd2e23a' #secret
     resource:

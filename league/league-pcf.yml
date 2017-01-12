@@ -13,7 +13,7 @@ eureka:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io:8761}/eureka/
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
 spring:
   jpa:
     show-sql: true
@@ -31,8 +31,8 @@ security:
   oauth2:
     resource:
       jwt:
-        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://auth-server-myp.cfapps.io:9999/auth/oauth/token_key}
-#      userInfoUri: http://localhost:9999/auth/user
+        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://auth-server-myp.cfapps.io/auth/oauth/token_key}
+#      userInfoUri: http://localhost/auth/user
 logging:
   level:
     com.makeurpicks: DEBUG
