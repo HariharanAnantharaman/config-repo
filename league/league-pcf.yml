@@ -36,7 +36,7 @@ spring:
 #    url: jdbc:mysql://${vcap.services.cleardb.[0].credentials.hostname:localhost}:${vcap.services.cleardb.[0].credentials.port:3306}/${vcap.services.cleardb.[0].credentials.name:league}
 #    username: ${vcap.services.cleardb.[0].credentials.username:dbuser}
 #    password: ${vcap.services.cleardb.[0].credentials.password:password}
-    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_0a9d6cd28f39fb9
+    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net:3306/ad_0a9d6cd28f39fb9
     username: bca48c59fd4f13
     password: 91b56d17
     driver-class-name: com.mysql.jdbc.Driver
