@@ -50,3 +50,4 @@ logging:
   level:
     com.makeurpicks: DEBUG
 #    org.springframework.security: DEBUG
+
