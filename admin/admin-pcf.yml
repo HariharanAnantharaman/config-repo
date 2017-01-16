@@ -2,16 +2,26 @@ server:
   port: 9000
   context-path: /admin
 eureka:
+#  instance:
+#    prefer-ip-address: true
+#    hostname: ${vcap.application.uris[0]:admin-myp.cfapps.io}
+#    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+#    leaseRenewalIntervalInSeconds: 10
+#    metadataMap:
+#      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
+#  client:
+#    serviceUrl:
+#      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
   instance:
     prefer-ip-address: true
-    hostname: ${vcap.application.uris[0]:eureka-leagues-myp.cfapps.io}
-    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+    hostname: admin-myp.cfapps.io
+    nonSecurePort: 9000
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
+      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
 security:
   oauth2:
     client:

@@ -6,7 +6,7 @@ security.user.password: testme
 eureka:
 #  instance:
 #    prefer-ip-address: true
-#    hostname: ${vcap.application.uris[0]:eureka-leagues-myp.cfapps.io}
+#    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}
 #    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
 #    leaseRenewalIntervalInSeconds: 10
 #    metadataMap:
@@ -16,7 +16,7 @@ eureka:
 #      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
   instance:
     prefer-ip-address: true
-    hostname: eureka-leagues-myp.cfapps.io
+    hostname: leagues-myp.cfapps.io
     nonSecurePort: 8081
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
