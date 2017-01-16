@@ -3,27 +3,27 @@ server:
   context-path: /leagues
 security.user.password: testme
 #security.user.password: dinesh
-eureka:
+#eureka:
+##  instance:
+##    prefer-ip-address: true
+##    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}
+##    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+##    leaseRenewalIntervalInSeconds: 10
+##    metadataMap:
+##      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
+##  client:
+##    serviceUrl:
+##      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
 #  instance:
 #    prefer-ip-address: true
-#    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}
-#    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+#    hostname: leagues-myp.cfapps.io
+#    nonSecurePort: 8081
 #    leaseRenewalIntervalInSeconds: 10
 #    metadataMap:
 #      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
 #  client:
 #    serviceUrl:
-#      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
-  instance:
-    prefer-ip-address: true
-    hostname: leagues-myp.cfapps.io
-    nonSecurePort: 8081
-    leaseRenewalIntervalInSeconds: 10
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
-  client:
-    serviceUrl:
-      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
+#      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
 spring:
   jpa:
     show-sql: true
@@ -44,7 +44,7 @@ security:
   oauth2:
     resource:
       jwt:
-        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://auth-server-myp.cfapps.io/auth/oauth/token_key}
+        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://localhost:9999/auth/oauth/token_key}
 #      userInfoUri: http://localhost/auth/user
 logging:
   level:
