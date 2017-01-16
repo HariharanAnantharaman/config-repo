@@ -24,19 +24,19 @@ security.user.password: testme
 #  client:
 #    serviceUrl:
 #      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
-spring:
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-  datasource:
-    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net:3306/ad_df28f4ed167592c
-    username: b2eff74b9fc73e
-    password: 9c8e2356
-    driver-class-name: com.mysql.jdbc.Driver
+#spring:
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#  datasource:
+#    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net:3306/ad_df28f4ed167592c
+#    username: b2eff74b9fc73e
+#    password: 9c8e2356
+#    driver-class-name: com.mysql.jdbc.Driver
 security:
   oauth2:
     resource:
