@@ -1,0 +1,53 @@
+server:
+  port: 8081
+  context-path: /leagues
+security.user.password: testme
+#security.user.password: dinesh
+eureka:
+#  instance:
+#    prefer-ip-address: true
+#    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}
+#    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+#    leaseRenewalIntervalInSeconds: 10
+#    metadataMap:
+#      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
+#  client:
+#    serviceUrl:
+#      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: leagues-myp.cfapps.io
+    nonSecurePort: 8081
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://${vcap.services.cleardb.[0].credentials.hostname:localhost}:${vcap.services.cleardb.[0].credentials.port:3306}/${vcap.services.cleardb.[0].credentials.name:league}
+    username: ${vcap.services.cleardb.[0].credentials.username:dbuser}
+    password: ${vcap.services.cleardb.[0].credentials.password:password}
+    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net:3306/ad_df28f4ed167592c
+    username: b2eff74b9fc73e
+    password: 9c8e2356
+    driver-class-name: com.mysql.jdbc.Driver
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: ${vcap.services.auth-token-key.credentials.uri:http://auth-server-myp.cfapps.io/auth/oauth/token_key}
+#      userInfoUri: http://localhost/auth/user
+logging:
+  level:
+    com.makeurpicks: DEBUG
+#    org.springframework.security: DEBUG
+
