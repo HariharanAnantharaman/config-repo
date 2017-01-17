@@ -13,15 +13,21 @@ eureka:
 #    serviceUrl:
 #      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
   instance:
-    prefer-ip-address: true
-    hostname: admin-myp.cfapps.io
+    prefer-ip-address: false
+    hostname: ${vcap.application.uris[0]:admin-myp.cfapps.io}
 #    nonSecurePort: 9000
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
+server:
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
 security:
   oauth2:
     client:

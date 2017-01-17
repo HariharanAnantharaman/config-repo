@@ -1,11 +1,11 @@
 server:
-  port: 8081
+#  port: 8080
   context-path: /leagues
 security.user.password: testme
 #security.user.password: dinesh
 eureka:
 #  instance:
-#    prefer-ip-address: true
+#    prefer-ip-address: false
 #    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}
 #    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
 #    leaseRenewalIntervalInSeconds: 10
@@ -15,15 +15,21 @@ eureka:
 #    serviceUrl:
 #      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
   instance:
-    prefer-ip-address: true
-    hostname: leagues-myp.cfapps.io
-    nonSecurePort: 8081
+    prefer-ip-address: false
+    hostname: ${vcap.application.uris[0]}
+#    nonSecurePort: 8080
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
+server:
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
 #spring:
 #  jpa:
 #    show-sql: true
