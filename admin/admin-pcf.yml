@@ -45,11 +45,11 @@ config:
     resourceURI: http://localhost:8081/leagues/user
 
 
-#zuul:
-#  routes:
-#    league:
-#      path: /leagues/**
-#      stripPrefix: false
+zuul:
+  routes:
+    league:
+      path: /leagues/**
+      stripPrefix: false
 #    pick:
 #      path: /picks/**
 #      stripPrefix: false
@@ -68,7 +68,9 @@ config:
 #      path: /register/auth/players/**
 #      stripPrefix: true
 
-            
+config:
+  oauth2:
+    resourceURI: http://localhost:8081/leagues/user            
 logging:
   level:
     org.springframework.security: DEBUG
