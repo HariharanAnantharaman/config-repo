@@ -42,7 +42,7 @@ security:
 
 config:
   oauth2:
-    resourceURI: http://localhost:8081/leagues/user
+    resourceURI: https://league-myp.cfapps.io/leagues/user
 
 
 zuul:
@@ -68,9 +68,6 @@ zuul:
 #      path: /register/auth/players/**
 #      stripPrefix: true
 
-config:
-  oauth2:
-    resourceURI: http://localhost:8081/leagues/user            
 logging:
   level:
     org.springframework.security: DEBUG
