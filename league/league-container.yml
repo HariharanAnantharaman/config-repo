@@ -28,7 +28,9 @@ spring:
     password: '{cipher}61156bd365666251d14678ae874fa78ded10711676e136385bf835a867664b02' #admin123
     driver-class-name: com.mysql.jdbc.Driver
     dbcp:
-      max-active:  5    
+      max-active:  5
+      test-on-borrow: true
+      validation-query: SELECT 1    
 security:
   oauth2:
     resource:
