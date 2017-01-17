@@ -1,5 +1,8 @@
 server:
 #  port: 8080
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
   context-path: /leagues
 security.user.password: testme
 #security.user.password: dinesh
@@ -26,10 +29,7 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
-server:
-  tomcat:
-    remote_ip_header: x-forwarded-for
-    protocol_header: x-forwarded-proto
+
 #spring:
 #  jpa:
 #    show-sql: true
@@ -56,4 +56,3 @@ logging:
   level:
     com.makeurpicks: DEBUG
 #    org.springframework.security: DEBUG
-

@@ -1,5 +1,8 @@
 server:
 #  port: 9000
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
   context-path: /admin
 eureka:
 #  instance:
@@ -24,10 +27,6 @@ eureka:
       enabled: true
     serviceUrl:
       defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
-server:
-  tomcat:
-    remote_ip_header: x-forwarded-for
-    protocol_header: x-forwarded-proto
 security:
   oauth2:
     client:
