@@ -45,25 +45,25 @@ config:
     resourceURI: http://localhost:8081/leagues/user
 
 
-zuul:
-  routes:
-    league:
-      path: /leagues/**
-      stripPrefix: false
-    pick:
-      path: /picks/**
-      stripPrefix: false
-    team:
-      path: /teams/**
-      serviceId: game
-      stripPrefix: false
-    week:
-      path: /weeks/**
-      stripPrefix: false
-      serviceId: game
-    game:
-      path: /games/**
-      stripPrefix: false
+#zuul:
+#  routes:
+#    league:
+#      path: /leagues/**
+#      stripPrefix: false
+#    pick:
+#      path: /picks/**
+#      stripPrefix: false
+#    team:
+#      path: /teams/**
+#      serviceId: game
+#      stripPrefix: false
+#    week:
+#      path: /weeks/**
+#      stripPrefix: false
+#      serviceId: game
+#    game:
+#      path: /games/**
+#      stripPrefix: false
 #    player:
 #      path: /register/auth/players/**
 #      stripPrefix: true
