@@ -52,19 +52,19 @@ config:
   oauth2:
     resourceURI: https://league-myp.cfapps.io/leagues/user
 
-league:
-  ribbon:
-    eureka:
-      enabled: false
-    listOfServers: league-myp.cfapps.io
-    ServerListRefreshInterval: 15000
+#league:
+#  ribbon:
+#    eureka:
+#      enabled: false
+#    listOfServers: league-myp.cfapps.io
+#    ServerListRefreshInterval: 15000
 zuul:
   routes:
     league:
       path: /leagues/**
-      url: http://league-myp.cfapps.io/
+#      url: http://league-myp.cfapps.io/
       stripPrefix: false
-#      serviceId: league      
+      serviceId: league      
 #    pick:
 #      path: /picks/**
 #      stripPrefix: false
