@@ -63,7 +63,7 @@ zuul:
     league:
       path: /leagues/**
 #      url: http://league-myp.cfapps.io/
-      stripPrefix: false
+      stripPrefix: true
 #      serviceId: league
 #    pick:
 #      path: /picks/**
