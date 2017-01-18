@@ -19,6 +19,9 @@ eureka:
     prefer-ip-address: false
     hostname: ${vcap.application.uris[0]:admin-myp.cfapps.io}
 #    nonSecurePort: 9000
+    statusPageUrl: http://${eureka.instance.hostname}/admin/info
+    healthCheckUrl: http://${eureka.instance.hostname}/health
+    homePageUrl: http://${eureka.instance.hostname}/admin/   
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
