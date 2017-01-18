@@ -24,7 +24,7 @@ eureka:
     leaseRenewalIntervalInSeconds: 10
     statusPageUrl: http://${eureka.instance.hostname}/leagues/info
     healthCheckUrl: http://${eureka.instance.hostname}leagues/health
-    homePageUrl: http://${eureka.instance.hostname}/leagues/   
+    homePageUrl: http://${eureka.instance.hostname}   
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
