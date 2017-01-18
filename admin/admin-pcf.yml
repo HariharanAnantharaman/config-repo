@@ -55,6 +55,7 @@ zuul:
     league:
       path: /leagues/**
       stripPrefix: false
+      serviceId: league
 #    pick:
 #      path: /picks/**
 #      stripPrefix: false
