@@ -3,7 +3,7 @@ server:
   context-path: /leagues
 security.user.password: testme
 #security.user.password: dinesh
-#eureka:
+eureka:
 ##  instance:
 ##    prefer-ip-address: true
 ##    hostname: ${vcap.application.uris[0]:leagues-myp.cfapps.io}

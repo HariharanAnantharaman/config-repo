@@ -1,5 +1,5 @@
 server:
-#  port: 9000
+  port: 9000
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
@@ -17,8 +17,8 @@ eureka:
 #      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://eureka-leagues-myp.cfapps.io}/eureka/
   instance:
     prefer-ip-address: false
-    hostname: ${vcap.application.uris[0]:admin-myp.cfapps.io}
-#    nonSecurePort: 9000
+    hostname: localhost
+    nonSecurePort: 9000
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
