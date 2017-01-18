@@ -55,7 +55,6 @@ zuul:
     league:
       path: /leagues/**
       stripPrefix: false
-      url: https://league-myp.cfapps.io/league
 #    pick:
 #      path: /picks/**
 #      stripPrefix: false
