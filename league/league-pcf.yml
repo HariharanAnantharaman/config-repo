@@ -1,5 +1,5 @@
 server:
-#  port: 8080
+  port: 80
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
@@ -20,11 +20,11 @@ eureka:
   instance:
     prefer-ip-address: false
     hostname: ${vcap.application.uris[0]}
-#    nonSecurePort: 8080
+    nonSecurePort: 80
     leaseRenewalIntervalInSeconds: 10
     statusPageUrl: http://${eureka.instance.hostname}/leagues/info
     healthCheckUrl: http://${eureka.instance.hostname}/leagues/health
-    homePageUrl: http://${eureka.instance.hostname}   
+    homePageUrl: http://${eureka.instance.hostname}  
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
