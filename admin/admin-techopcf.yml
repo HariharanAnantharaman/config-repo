@@ -11,7 +11,7 @@ eureka:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+      defaultZone: http://config-leagues-myp.apps.techolution.com/eureka/
 security:
   oauth2:
     client:
