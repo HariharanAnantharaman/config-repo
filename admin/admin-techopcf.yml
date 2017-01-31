@@ -3,7 +3,7 @@ server:
   context-path: /admin
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
     hostname: ${vcap.application.uris[0]:127.0.0.1}
     nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
     leaseRenewalIntervalInSeconds: 10
