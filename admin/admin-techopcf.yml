@@ -1,11 +1,11 @@
 server:
-  port: 9000
+#  port: 9000
   context-path: /admin
 eureka:
   instance:
     prefer-ip-address: false
     hostname: ${vcap.application.uris[0]:127.0.0.1}
-    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+#    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
