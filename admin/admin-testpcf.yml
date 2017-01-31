@@ -29,7 +29,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://eureka-leagues-myp.cfapps.io/eureka/
+      defaultZone: http://eureka-leagues-myp.apps.techolution.com/eureka/
 security:
   oauth2:
     client:
