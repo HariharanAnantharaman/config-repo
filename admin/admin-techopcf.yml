@@ -4,8 +4,10 @@ server:
 eureka:
   instance:
     prefer-ip-address: false
-    hostname: ${vcap.application.uris[0]:127.0.0.1}
+    #hostname: ${vcap.application.uris[0]:127.0.0.1}
+    hostname: 127.0.0.1
 #    nonSecurePort: ${vcap.services.eureka-service.credentials.port:${server.port}}
+    nonSecurePort: 8761
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${random.value}}
