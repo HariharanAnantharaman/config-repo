@@ -15,8 +15,10 @@ eureka:
 security:
   oauth2:
     client:
-      access-token-uri: ${vcap.services.auth-token.credentials.uri:http://auth-server-myp.apps.techolution.com/auth/oauth/token}
-      user-authorization-uri: ${vcap.services.auth-authorize.credentials.uri:http://auth-server-myp.apps.techolution.com/auth/oauth/authorize}
+      #access-token-uri: ${vcap.services.auth-token.credentials.uri:http://auth-server-myp.apps.techolution.com/auth/oauth/token}
+      access-token-uri: http://localhost:9999/auth/oauth/token
+      #user-authorization-uri: ${vcap.services.auth-authorize.credentials.uri:http://auth-server-myp.apps.techolution.com/auth/oauth/authorize}
+      user-authorization-uri: http://localhost:9999//auth/oauth/authorize
       client-id: confidential
       client-secret: '{cipher}95557e0e1afd6913c6f836a4af9d6ef7a50a0eacd6040dfbee737fdc2fd2e23a'
     resource:
