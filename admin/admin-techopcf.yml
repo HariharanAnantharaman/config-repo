@@ -60,7 +60,7 @@ zuul:
       path: /games/**
       stripPrefix: false
     player:
-      path: /auth/**
+      path: /auth/players/**
       stripPrefix: true
 
             
@@ -69,4 +69,4 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.cloud.netflix.zuul: INFO
     com.makeurpicks: DEBUG
-    com.netflix.hystrix: DEBUG
+    #com.netflix.hystrix: DEBUG
