@@ -59,7 +59,7 @@ zuul:
     game:
       path: /games/**
       stripPrefix: false
-    player:
+    auth:
       path: /auth/players/**
       stripPrefix: true
 
